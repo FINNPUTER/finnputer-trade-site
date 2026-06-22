@@ -196,6 +196,39 @@
   .fine{font-size:11.5px;color:var(--dim);line-height:1.7;max-width:74ch}
   .hat{color:var(--green-d);font-family:var(--disp);letter-spacing:1px;font-weight:600}
 
+  /* phone mockup */
+  .approw{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;margin-top:36px}
+  .phone{display:flex;justify-content:center}
+  .ph-frame{width:300px;border-radius:40px;background:#04070a;border:1px solid var(--line);padding:12px 8px 8px;position:relative;
+    box-shadow:0 34px 80px rgba(0,0,0,.65),inset 0 0 0 1px rgba(255,255,255,.02)}
+  .ph-frame::before{content:"";position:absolute;top:15px;left:50%;transform:translateX(-50%);width:92px;height:5px;border-radius:3px;background:#11181f;z-index:2}
+  .ph-screen{border-radius:30px;overflow:hidden;background:#070b0f;margin-top:16px}
+  .ph-status{display:flex;justify-content:space-between;padding:8px 16px 4px;font-size:10.5px;color:var(--soft)}
+  .ph-head{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line2);background:#0c1219}
+  .ph-head .av{width:30px;height:30px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+  .ph-head .bk{color:var(--soft);font-size:19px}
+  .ph-head .nm{display:flex;flex-direction:column;line-height:1.2}
+  .ph-head .nm b{font-size:13px}
+  .ph-head .nm span{font-size:10px;color:var(--green)}
+  .ph-head .dots{margin-left:auto;color:var(--dim);font-size:16px}
+  .ph-body{padding:14px 11px 11px;min-height:296px}
+  .ph-bubble{background:#0e151d;border:1px solid var(--line2);border-radius:5px 15px 15px 15px;padding:13px 14px;font-size:12px;line-height:1.65}
+  .ph-bubble .b1{font-family:var(--disp);font-weight:600;margin-bottom:7px;font-size:13px}
+  .ph-bubble .mut{color:var(--dim)} .ph-bubble .gr{color:var(--green);font-weight:600}
+  .ph-kb{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:11px}
+  .ph-kb button{font-family:var(--mono);font-size:10px;color:var(--ink);background:#0c1219;border:1px solid var(--line2);border-radius:9px;padding:9px 3px;cursor:default;text-align:center}
+  .ph-kb button.full{grid-column:span 3;color:var(--green);border-color:var(--line);background:rgba(22,255,155,.05)}
+  .ph-kb button.span2{grid-column:span 2}
+  .ph-input{display:flex;align-items:center;gap:9px;padding:9px 11px;border-top:1px solid var(--line2);background:#0c1219}
+  .ph-input .box{flex:1;background:#070b0f;border:1px solid var(--line2);border-radius:16px;padding:7px 13px;font-size:11px;color:var(--dim)}
+  .ph-input .snd{width:28px;height:28px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#04130c;font-size:13px}
+  .appbullets{list-style:none;display:flex;flex-direction:column;gap:20px}
+  .appbullets li{display:flex;gap:13px}
+  .appbullets li .k{width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:7px;flex-shrink:0;box-shadow:0 0 8px var(--green)}
+  .appbullets li h4{font-family:var(--disp);font-weight:600;font-size:14.5px;margin-bottom:3px}
+  .appbullets li p{font-size:13px;color:var(--soft)}
+  @media(max-width:720px){.approw{grid-template-columns:1fr;gap:30px;justify-items:center}}
+
   @media(max-width:900px){.mods{grid-template-columns:1fr 1fr}.twocol{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr 1fr}}
   @media(max-width:720px){.hero{grid-template-columns:1fr;gap:30px}.hold{grid-template-columns:1fr}}
   @media(max-width:480px){.mods{grid-template-columns:1fr}.road{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
@@ -243,6 +276,45 @@
 <div class="ticker"><div class="track" id="tk"></div></div>
 
 <div class="wrap">
+
+  <!-- IN-APP / PHONE -->
+  <section id="app">
+    <div class="cmd">&gt; <b>open</b> @FinnputerTradeBot</div>
+    <h2 class="h2">The whole terminal, <span class="g">in one chat.</span></h2>
+    <p class="sub">No app to install, no browser tab. Scan, buy, set exits and track P&amp;L — straight from Telegram.</p>
+    <div class="approw">
+      <div class="phone"><div class="ph-frame"><div class="ph-screen">
+        <div class="ph-status"><span>9:41</span><span>5G · 100%</span></div>
+        <div class="ph-head">
+          <span class="bk">‹</span>
+          <img class="av" id="phav" alt="">
+          <div class="nm"><b>FINNPUTER Trade</b><span>online</span></div>
+          <span class="dots">⋮</span>
+        </div>
+        <div class="ph-body">
+          <div class="ph-bubble">
+            <div class="b1">👋 FINNPUTER Trade</div>
+            <div class="mut">Wallet 7xKp…Bnk2</div>
+            <div>Balance <span class="gr">4.21 SOL</span> <span class="mut">($612)</span></div>
+            <div class="mut" style="margin-top:8px">Paste a token address to scan &amp; trade.</div>
+          </div>
+          <div class="ph-kb">
+            <button>💸 Buy</button><button>📈 Positions</button><button>💰 Sell</button>
+            <button>📊 Orders</button><button>👥 Copy</button><button>🔔 Alerts</button>
+            <button class="full">🛡 Safety Scan</button>
+            <button>👛 Wallet</button><button>🎁 Referral</button><button>📄 Tax</button>
+            <button class="span2">⚙ Settings</button><button>🔄 Refresh</button>
+          </div>
+        </div>
+        <div class="ph-input"><div class="box">Message</div><div class="snd">➜</div></div>
+      </div></div></div>
+      <ul class="appbullets">
+        <li><span class="k"></span><div><h4>Everything from Telegram</h4><p>Buy, sell, copy-trade, set TP/SL — no separate app, no extension.</p></div></li>
+        <li><span class="k"></span><div><h4>Scan before you buy</h4><p>Paste any token, get a safety + bundle report in seconds.</p></div></li>
+        <li><span class="k"></span><div><h4>Your keys, your coins</h4><p>Self-custody wallet you can export anytime.</p></div></li>
+      </ul>
+    </div>
+  </section>
 
   <!-- SCANNER / FEATURES -->
   <section id="scan">
@@ -406,6 +478,7 @@
     ["#16ff9b","Copy trade executed","6m"],["#ffce6b","Exit Coach: RENDER +142%","8m"]];
   const cell=f=>`<span class="tk"><span class="d" style="background:${f[0]};box-shadow:0 0 7px ${f[0]}"></span>${f[1]}<span class="t">${f[2]} ago</span></span>`;
   document.getElementById('tk').innerHTML=(F.map(cell).join('')).repeat(2);
+  document.getElementById('phav').src=document.getElementById('lg').src;
 </script>
 </body>
 </html>
