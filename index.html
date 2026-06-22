@@ -229,6 +229,17 @@
   .appbullets li p{font-size:13px;color:var(--soft)}
   @media(max-width:720px){.approw{grid-template-columns:1fr;gap:30px;justify-items:center}}
 
+  /* exit coach */
+  .coachgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .coachcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .coachhead{font-family:var(--disp);font-weight:600;font-size:15px;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .cdot{width:8px;height:8px;border-radius:50%}
+  .cdot.up{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .cdot.dn{background:#ff6b6b;box-shadow:0 0 8px #ff6b6b}
+  .coachrow{font-family:var(--mono);font-size:12.5px;color:var(--soft);padding:9px 0;border-top:1px solid var(--line2)}
+  .coachrow b{color:var(--ink)} .coachrow .up{color:var(--green)} .coachrow .dn{color:#ff6b6b}
+  @media(max-width:720px){.coachgrid{grid-template-columns:1fr}}
+
   @media(max-width:900px){.mods{grid-template-columns:1fr 1fr}.twocol{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr 1fr}}
   @media(max-width:720px){.hero{grid-template-columns:1fr;gap:30px}.hold{grid-template-columns:1fr}}
   @media(max-width:480px){.mods{grid-template-columns:1fr}.road{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
@@ -241,7 +252,7 @@
 <div class="bar"><div class="wrap">
   <div class="logo"><img id="lg" alt="">FINNPUTER <b>Trade</b></div>
   <nav class="bnav">
-    <a href="#scan">Scanner</a><a href="#bundle">Bundles</a><a href="#ai">AI</a>
+    <a href="#scan">Scanner</a><a href="#bundle">Bundles</a><a href="#ai">AI</a><a href="#exit">Exit Coach</a>
     <a href="#token">$FINNPUTER</a><a href="#road">Roadmap</a>
   </nav>
   <div class="live"><span class="led"></span>online · solana</div>
@@ -374,11 +385,34 @@
     </div>
   </section>
 
+  <!-- EXIT COACH -->
+  <section id="exit">
+    <div class="cmd">&gt; <b>exit</b> --coach</div>
+    <h2 class="h2">It watches so <span class="g">you don't have to.</span></h2>
+    <p class="sub">Exit Coach watches every open position 24/7 and tells you when to take profit or cut a loss — it alerts you, or sells automatically. No TP/SL math, no staring at charts at 3am.</p>
+    <div class="coachgrid">
+      <div class="coachcard">
+        <div class="coachhead"><span class="cdot up"></span>Take profit</div>
+        <div class="coachrow"><b>WIF</b> <span class="up">+142%</span> — momentum cooling, lock some in?</div>
+        <div class="coachrow"><b>RENDER</b> <span class="up">+88%</span> — first target hit</div>
+        <div class="coachrow"><b>BONK</b> <span class="up">+57%</span> — trailing your gains</div>
+      </div>
+      <div class="coachcard">
+        <div class="coachhead"><span class="cdot dn"></span>Protect the downside</div>
+        <div class="coachrow"><b>POPCAT</b> <span class="dn">-31%</span> — stop hit, auto-sold</div>
+        <div class="coachrow"><b>MEW</b> <span class="dn">-18%</span> — liquidity dropping, heads up</div>
+        <div class="coachrow"><b>SLERF</b> <span class="dn">-12%</span> — watching closely</div>
+      </div>
+    </div>
+    <p class="sub" style="font-size:13px;margin-top:18px;color:var(--dim)">Part of the AI co-pilot. Runs on credits — you only pay for what you use.</p>
+  </section>
+
   <!-- WHY HOLD -->
   <section id="token">
     <div class="cmd">&gt; <b>hold</b> $FINNPUTER</div>
     <h2 class="h2">The token does <span class="g">two things.</span></h2>
     <p class="sub">$FINNPUTER is live on Solana and the utility is wired in. No yield, no staking, no revenue share — just lower fees and a shrinking supply.</p>
+    <a href="https://dexscreener.com/solana/Xp8dC5i7EcAeZo873ijwvipt3pUbgvgi5sHsg9sBAGS" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:6px;font-size:12.5px;color:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 15px;background:var(--panel)"><span style="color:var(--dim);letter-spacing:1px">CA</span><span style="font-family:var(--mono)">Xp8dC5i7…sBAGS</span><span style="color:var(--green)">chart ↗</span></a>
     <div class="hold">
       <div class="card">
         <h3>Hold &rarr; trade cheaper</h3>
@@ -394,7 +428,7 @@
       </div>
       <div class="card">
         <h3>Fees &rarr; buyback &amp; burn</h3>
-        <p>A share of every trading fee buys $FINNPUTER on the open market and burns it. More volume through the terminal means more supply gone — working for everyone holding, on-chain and provable.</p>
+        <p>100% of the bot trading fees go to buyback &amp; burn — the bot keeps nothing for itself. The moment its fee wallet hits 0.5 SOL, it buys $FINNPUTER on the open market and burns it. On-chain and provable.</p>
         <div class="fly"><b>Users</b><span class="a">&rarr;</span><b>volume</b><span class="a">&rarr;</span><b>fees</b><span class="a">&rarr;</span><b>burn</b><span class="a">&rarr;</span><b>hold</b></div>
       </div>
     </div>
