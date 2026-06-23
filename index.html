@@ -245,6 +245,15 @@
   @media(max-width:480px){.mods{grid-template-columns:1fr}.road{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important}}
   :focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .faq{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+  .faq details{border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:15px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--green);font-family:var(--mono);font-size:20px;line-height:1}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq .a{padding:2px 18px 16px;color:var(--soft);line-height:1.65;font-size:14.5px}
+  .faq .a b{color:var(--green);font-weight:600}
+  .faq .a code{font-family:var(--mono);color:var(--green);font-size:12px;word-break:break-all}
 </style>
 </head>
 <body>
@@ -471,6 +480,45 @@
       <div class="fact"><div class="v">Yours</div><div class="k">Custody</div><div class="d">You hold the keys. We never touch your funds.</div></div>
       <div class="fact"><div class="v">30%</div><div class="k">Referral share</div><div class="d">Earn 30% of fees from everyone you bring.</div></div>
       <div class="fact"><div class="v">Telegram</div><div class="k">No app, no KYC</div><div class="d">Runs entirely in the chat you already use.</div></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="cmd">&gt; <b>help</b> --faq</div>
+    <h2 class="h2">Questions, <span class="g">answered.</span></h2>
+    <div class="faq">
+      <details>
+        <summary>Is it really self-custody?</summary>
+        <div class="a">Yes. Your wallet keys stay with you and the bot never holds or controls your funds. You can export a wallet backup any time and withdraw whenever you want.</div>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <div class="a">A flat <b>0.8%</b> trading fee per trade. No subscription, no hidden costs. The fee drops the more $FINNPUTER you hold.</div>
+      </details>
+      <details>
+        <summary>How do I get a lower fee?</summary>
+        <div class="a">Hold $FINNPUTER in the <b>same wallet you trade with</b> (your active wallet). The discount then applies automatically on your next trade:<br>1M+ &rarr; 0.7% &middot; 5M+ &rarr; 0.65% &middot; 10M+ &rarr; 0.6% &middot; 30M+ &rarr; 0.55% &middot; 50M+ &rarr; 0.5%.<br>The bot always charges the lowest fee you qualify for.</div>
+      </details>
+      <details>
+        <summary>Can I import my own wallet?</summary>
+        <div class="a">Yes. Use <b>Wallet &rarr; Import Wallet</b> and paste your private key in a private chat, then set it active via Switch Wallet. Whatever wallet is active is the one that trades and the one counted for the fee discount.</div>
+      </details>
+      <details>
+        <summary>What does the scanner check?</summary>
+        <div class="a">Before you buy: bundled supply, sniper and fresh-wallet clusters, mint and freeze authority, LP lock status and real holder concentration (LP pools excluded, so the numbers are honest). High-risk tokens are flagged and the worst are hard-blocked.</div>
+      </details>
+      <details>
+        <summary>What is buyback &amp; burn?</summary>
+        <div class="a"><b>100% of the bot's trading fees</b> buy back and burn $FINNPUTER. The bot keeps nothing. Once the fee wallet reaches 0.5 SOL it buys $FINNPUTER on the open market and burns every token. Watch it live at <b>burns.finnputerdex.com</b>.</div>
+      </details>
+      <details>
+        <summary>What is $FINNPUTER and where is the contract?</summary>
+        <div class="a">$FINNPUTER is the Solana token that powers the fee discount and the buyback &amp; burn. Contract address:<br><code>Xp8dC5i7EcAeZo873ijwvipt3pUbgvgi5sHsg9sBAGS</code></div>
+      </details>
+      <details>
+        <summary>Do I need an app or KYC?</summary>
+        <div class="a">No. Everything runs inside Telegram. No download, no sign-up, no KYC. Open the bot and you are trading.</div>
+      </details>
     </div>
   </section>
 
